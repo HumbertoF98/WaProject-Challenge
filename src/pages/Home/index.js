@@ -29,8 +29,9 @@ export default function Home({ navigation }) {
   const [githubers, setGitHubers] = useState([]);
   const isFocused = useIsFocused();
   const [deleted, setDeleted] = useState(false);
-  const [arrayholder, setArrayHolder] = useState([]);
   const [removedUsers, setRemovedUsers] = useState([]);
+  const [arrayholder, setArrayHolder] = useState([]);
+
   // function responsible to load the github users
   async function loadUsers() {
     try {
@@ -66,7 +67,7 @@ export default function Home({ navigation }) {
   // function to filter the data on search
   const searchFilterFunction = (text) => {
     setValue(text);
-    const newData = githubers.filter((item) => {
+    const newData = arrayholder.filter((item) => {
       const itemData = `${item.login.toUpperCase()}} ${item.id}`;
       const textData = text.toUpperCase();
       return itemData.indexOf(textData) > -1;
