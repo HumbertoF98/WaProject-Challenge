@@ -31,7 +31,7 @@ export default function Home({ navigation }) {
   const [deleted, setDeleted] = useState(false);
   const [removedUsers, setRemovedUsers] = useState([]);
   // function responsible to load the github users
-  async function loadNavers() {
+  async function loadUsers() {
     try {
       const response = await api.get("users");
       if (response.status === 200) {
@@ -45,7 +45,7 @@ export default function Home({ navigation }) {
   // runs whenever the page is focused
   useEffect(() => {
     if (isFocused) {
-      loadNavers();
+      loadUsers();
     }
   }, [isFocused]);
 
@@ -71,7 +71,7 @@ export default function Home({ navigation }) {
     });
     setGitHubers(newData);
     if (text === "") {
-      loadNavers();
+      loadUsers();
     }
   };
 
