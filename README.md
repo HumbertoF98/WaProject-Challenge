@@ -1,7 +1,7 @@
 # Desafio WAProject
 
 <h1 align="center">
-    <img alt="Nave.rs" src="assets/nave.png" height="60px" />
+    <img alt="GitHubUsers" src="assets/github.png" height="60px" />
     <br/>
    <a href="https://reactnative.dev/docs/getting-started" target="_blank" rel="noopener">React-Native</a> 
 </h1>
@@ -32,9 +32,9 @@ Primeiro clone o repositório em seu computador, por meio do terminal utilizando
 
 ```sh
   # Clone o repositório
-  $ git clone https://github.com/HumbertoF98/NaveDex-React-Native.git
+  $ git clone https://github.com/HumbertoF98/WaProject-Challenge.git
   # Entre na pasta raiz da aplicação
-  $ cd NaveDex-React-Native
+  $ cd GitHubUsers
 ```
 
 ```sh
