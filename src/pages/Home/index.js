@@ -29,6 +29,7 @@ export default function Home({ navigation }) {
   const [githubers, setGitHubers] = useState([]);
   const isFocused = useIsFocused();
   const [deleted, setDeleted] = useState(false);
+  const [arrayholder, setArrayHolder] = useState([]);
   const [removedUsers, setRemovedUsers] = useState([]);
   // function responsible to load the github users
   async function loadUsers() {
@@ -36,6 +37,7 @@ export default function Home({ navigation }) {
       const response = await api.get("users");
       if (response.status === 200) {
         setGitHubers(response.data);
+        setArrayHolder(response.data);
       }
     } catch (err) {
       setGitHubers([]);
@@ -65,14 +67,14 @@ export default function Home({ navigation }) {
   const searchFilterFunction = (text) => {
     setValue(text);
     const newData = githubers.filter((item) => {
-      const itemData = `${item.login.toUpperCase()}}`;
+      const itemData = `${item.login.toUpperCase()}} ${item.id}`;
       const textData = text.toUpperCase();
       return itemData.indexOf(textData) > -1;
     });
     setGitHubers(newData);
-    if (text === "") {
+    /*   if (text === "") {
       loadUsers();
-    }
+    } */
   };
 
   return (
@@ -83,7 +85,7 @@ export default function Home({ navigation }) {
           onChangeText={(text) => searchFilterFunction(text)}
           underlineColorAndroid="transparent"
           value={value}
-          placeholder="Buscar por nome (login)"
+          placeholder="Buscar por nome (login) e userId"
         />
       ) : null}
       <SubHeader>
